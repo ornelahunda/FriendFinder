@@ -1,0 +1,30 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "A survey based app to find matching friends",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ornelahunda/FriendFinder.git"
+  },
+  "keywords": [
+    "friend",
+    "finder"
+  ],
+  "author": "Ornela Hunda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ornelahunda/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/ornelahunda/FriendFinder#readme",
+  "dependencies": {
+    "path": "^0.12.7",
+    "mysql": "^2.10.2",
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3"
+  }
+}
