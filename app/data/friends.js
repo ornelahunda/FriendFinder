@@ -2,7 +2,7 @@
 
 var friendsArray=[{
     "name": "Ahmed",
-    "photo": "http://bdfjade.com/data/out/142/6448580-profile-pictures.jpg",
+    "photo": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAq7AAAAJDAwYzI4NTQ4LWYwZWUtNGFkYS1hNTYwLTZjYzkwY2ViZDA3OA.jpg",
     "scores": [
     "1",
     "1",
@@ -20,15 +20,15 @@ var friendsArray=[{
     name: 'Alessia',
     photo: 'https://i.ytimg.com/vi/mRf3-JkwqfU/hqdefault.jpg',
     scores: [
-        '2',
-        '4',
-        '1',
-        '1',
-        '1',
-        '1',
-        '1',
-        '2',
-        '1',
+        '5',
+        '5',
+        '5',
+        '5',
+        '5',
+        '5',
+        '5',
+        '5',
+        '5',
         '5'
     ]
 },];

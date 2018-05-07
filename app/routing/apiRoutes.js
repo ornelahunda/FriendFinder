@@ -15,46 +15,52 @@ var path = require('path');
 var friends = require('../data/friends.js');
 
 // Export the API routes
-module.exports = function(app) {
+module.exports = function (app) {
 	// console.log('api routes worked!!!');
 
 	// All the friend list entered in the array
-	app.get('/api/friends', function(req, res) {
+	app.get('/api/friends', function (req, res) {
 		res.json(friends);
 	});
 
 	// Method to enter a new friend 
-	app.post('/api/friends', function(req, res) {
-		// Capture the user input object
+	app.post('/api/friends', function (req, res) {
+
+		// Set the value of the user input object in a variable
+
 		var userInput = req.body;
-		// console.log('userInput = ' + JSON.stringify(userInput));
+		// console.log(JSON.stringify(userInput));
 
-		var userResponses = userInput.scores;
-		// console.log('userResponses = ' + userResponses);
+		var userScores = userInput.scores;
+		// console.log( userScores);
 
-		// Compute best friend match
+		//Variables to hold best match 
 		var matchName = '';
 		var matchImage = '';
-		var totalDifference = 10000; // Make the initial value big for comparison
+		
+		// Make the initial value of the difference very big for comparison purpose
+		var totalDifference = 10000; 
 
-		// Examine all existing friends in the list
+
+		// Create a loop to compare user with previous Friends in the list
+		
 		for (var i = 0; i < friends.length; i++) {
-			// console.log('friend = ' + JSON.stringify(friends[i]));
+			// console.log(JSON.stringify(friends[i]));
 
-			// Compute differenes for each question
-			var diff = 0;
-			for (var j = 0; j < userResponses.length; j++) {
-				diff += Math.abs(friends[i].scores[j] - userResponses[j]);
+			// calculate the difference for each question
+			var difference = 0;
+			for (var j = 0; j < userScores.length; j++) {
+				difference += Math.abs(friends[i].scores[j] - userScores[j]);
 			}
-			// console.log('diff = ' + diff);
+			// console.log(difference);
 
 			// If lowest difference, record the friend match
-			if (diff < totalDifference) {
-				// console.log('Closest match found = ' + diff);
-				// console.log('Friend name = ' + friends[i].name);
-				// console.log('Friend image = ' + friends[i].photo);
+			if (difference < totalDifference) {
+				console.log('Closest match found = ' + difference);
+				console.log('Friend name = ' + friends[i].name);
+				console.log('Friend image = ' + friends[i].photo);
 
-				totalDifference = diff;
+				totalDifference = difference;
 				matchName = friends[i].name;
 				matchImage = friends[i].photo;
 			}
@@ -64,6 +70,10 @@ module.exports = function(app) {
 		friends.push(userInput);
 
 		// Send appropriate response
-		res.json({status: 'OK', matchName: matchName, matchImage: matchImage});
+		res.json({
+			status: 'OK',
+			matchName: matchName,
+			matchImage: matchImage
+		});
 	});
 };
