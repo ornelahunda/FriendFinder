@@ -9,9 +9,6 @@ var app = express();
 // Sets the port on which server is going to be listening
 var PORT = process.env.PORT || 3000;
 
-//// Expose the public directory to access CSS files
-// app.use(express.static(path.join(__dirname, './app/public')));
-
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
