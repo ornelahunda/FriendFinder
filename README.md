@@ -6,7 +6,8 @@ When the user submits the survey, it will sent a result back which is going to b
 
 # DEMO 
 This app is deployed to Heroku, here it is the link:
-....
+
+https://rocky-woodland-65018.herokuapp.com/
 
 # Technologies used and implementation details
 
